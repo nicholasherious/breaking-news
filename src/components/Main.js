@@ -6,7 +6,7 @@ function Main() {
   const [news, setNews] = useState([]);
 
   const URL =
-    'http://newsapi.org/v2/top-headlines?country=us&apiKey=bd5aa59d0a5d4dfe88cbad0fb2bffbc1';
+    'https://newsapi.org/v2/top-headlines?country=us&apiKey=bd5aa59d0a5d4dfe88cbad0fb2bffbc1';
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -24,11 +24,11 @@ function Main() {
 
   console.log(news);
   return (
-   <div>
-     {news.map(news => (
-      <Article key={news.title} news={news} />
-     ))}
-   </div>
+    <div>
+      {news.map(news => (
+        <Article key={news.title} news={news} />
+      ))}
+    </div>
   );
 }
 
