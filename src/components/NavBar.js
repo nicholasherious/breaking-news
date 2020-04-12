@@ -1,9 +1,13 @@
 import React from 'react';
+import maple from '../maple-leaf.png'
 
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a className="navbar-brand" href="#">Breaking News</a>
+    <a class="navbar-brand" href="#">
+    <img src={maple} width="30" height="30" class="d-inline-block align-top" alt="" />
+    {' '}Canadian News Aggregator
+  </a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

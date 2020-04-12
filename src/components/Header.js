@@ -2,25 +2,10 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className="row">
-  <div className="col-sm-6">
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
-        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div className="col-sm-6">
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
-        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
+    <div class="jumbotron">
+  <h1>Breaking News <span className="badge badge-secondary">New</span></h1>
+  <p class="lead">All your top breaking news stories and headlines from around the world. Stories update every 15 minutes from over 20 major news sources.</p>
+  
 </div>
   );
 }

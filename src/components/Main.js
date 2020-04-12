@@ -24,7 +24,7 @@ function Main() {
 
   console.log(news);
   return (
-    <div>
+    <div className="">
       {news.map(news => (
         <Article key={news.title} news={news} />
       ))}
