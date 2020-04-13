@@ -1,32 +1,59 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: '100%',
+    marginBottom: 20,
+  },
+  media: {
+    height: '600',
+  },
+});
 
 function Article({ news }) {
-  let styles = {
-    width: '375px',
-  };
-
-  
+  const classes = useStyles();
 
   return (
-    <div className="shadow-sm p-2 mb-5 bg-light rounded">
-      <div className="card mb-3">
-        <a href={news.url} target="_blank" rel="noopener noreferrer">
-          <img src={news.urlToImage} className="card-img-top" alt={news.title} />
-        </a>
-        <div className="card-body">
-          <h5 className="card-title">
-            <a href={news.url} target="_blank" rel="noopener noreferrer">
-              {news.title}
-            </a>
-          </h5>
-          <p className="card-text">{news.description}</p>
-          <span>Author: {news.author}</span>
-        </div>
-        <div className="card-footer">
-          <small class="text-muted">Published: {news.publishedAt}</small>
-        </div>
-      </div>
-    </div>
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          className={classes.media}
+          image={news.urlToImage}
+          title={news.title}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {news.title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {news.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button
+          size="small"
+          color="primary"
+          href={news.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Continue Reading
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
 
